@@ -10,7 +10,6 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
                 </a>
             </div>
             <div class="mt-8 md:mt-0 items-center">
@@ -46,7 +45,7 @@
             </h1>
 
             <div class="text-sm mt-8">
-                <a href="#" class="bg-blue-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                <a href="ingredients/create/newingredient" class="bg-blue-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Add ingredients
                 </a>
             </div>

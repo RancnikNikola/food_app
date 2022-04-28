@@ -35,18 +35,25 @@ Route::post('dishes/{dish:slug}/comments', [CommentController::class, 'store']);
 Route::get('register', [UserController::class, 'create'])->middleware('guest'); // ->repeat password attribute
 Route::post('register', [UserController::class, 'store'])->middleware('guest');
 
-Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');;
-Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');;
-Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');;
+Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('categories', [CategoryController::class, 'index']);
 Route::get('categories/{category:slug}', [CategoryController::class, 'show']);
+Route::get('categories/create/newcategory', [CategoryController::class, 'create']);
+Route::post('categories', [CategoryController::class, 'store']);
+
 
 Route::get('ingredients', [IngredientController::class, 'index']);
 Route::get('ingredients/{ingredient:slug}', [IngredientController::class, 'show']);
+Route::get('ingredients/create/newingredient', [IngredientController::class, 'create']);
+Route::post('ingredients', [IngredientController::class, 'store']);
 
 Route::get('tags', [TagController::class, 'index']);
 Route::get('tags/{tag:slug}', [TagController::class, 'show']);
+Route::get('tags/create/newtag', [TagController::class, 'create']);
+Route::post('tags', [TagController::class, 'store']);
 
 
 

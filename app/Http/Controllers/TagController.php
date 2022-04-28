@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use Illuminate\Validation\Rule;
+
 
 class TagController extends Controller
 {
@@ -19,5 +21,22 @@ class TagController extends Controller
         return view('tags.show', [
             'tag' => $tag
         ]);
+    }
+
+    public function create()
+    {
+        return view('tags.create');
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'name' => 'required',
+            'slug' => ['required', Rule::unique('tags', 'slug')],
+        ]);
+    
+        Tag::create($attributes);
+
+        return redirect('/tags');
     }
 }
