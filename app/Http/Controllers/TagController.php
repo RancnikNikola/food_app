@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\Category;
+
 use Illuminate\Validation\Rule;
 
 
@@ -12,7 +14,8 @@ class TagController extends Controller
     public function index()
     {
         return view('tags.index', [
-            'tags' => Tag::all()
+            'tags' => Tag::all(),
+            'categories' => Category::all(),
         ]);
     }
 

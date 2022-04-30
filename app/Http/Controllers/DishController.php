@@ -14,14 +14,14 @@ class DishController extends Controller
     {
         return view('dishes.index', [
             'dishes' => Dish::latest()->filter(request(['search', 'category']))->get(),
-            'categories' => Category::all()
+            'categories' => Category::all(),
         ]);
     }
 
     public function show(Dish $dish)
     {
         return view('dishes.show', [
-            'dish' => $dish
+            'dish' => $dish,
         ]);
     }
 

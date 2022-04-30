@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ingredient;
+use App\Models\Category;
+
 use Illuminate\Validation\Rule;
 
 
@@ -12,7 +14,8 @@ class IngredientController extends Controller
     public function index()
     {
         return view('ingredients.index', [
-            'ingredients' => Ingredient::all()
+            'ingredients' => Ingredient::all(),
+            'categories' => Category::all(),
         ]);
     }
 

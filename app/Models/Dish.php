@@ -27,8 +27,7 @@ class Dish extends Model
 
         if (isset($filters['category'])) {
             $query
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('description', 'like', '%' . request('search') . '%');
+                ->where('slug', 'like', '%' . request('category') . '%');
         }
         
     }
